@@ -100,11 +100,11 @@
       <div class="brand" id="brand-text">إسماعيل قنبر</div>
       <div class="nav-actions">
         <!-- رابط Google Form لاستقبال حلول الطلاب والتقييم التشخيصي -->
-        <a href="https://forms.gle/zT2kmWhQjBtaa17J9" target="_blank" class="btn-nav-primary" id="btn-submit-solution">
+        <a href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" class="btn-nav-primary" id="btn-submit-solution">
           <span>📝</span> <span id="btn-solution-text">تقديم الحل التشخيصي</span>
         </a>
         <!-- رابط السيرة الذاتية CV على Google Drive -->
-        <a href="https://drive.google.com/file/d/1A6w8sa52XKy79Z4gjbU49qsFCo7u7EWA/view?usp=sharing" target="_blank" class="btn-nav-secondary" id="cv-btn">السيرة الذاتية (CV)</a>
+        <a href="YOUR_CV_LINK_HERE" target="_blank" class="btn-nav-secondary" id="cv-btn">السيرة الذاتية (CV)</a>
         <button class="lang-btn" onclick="toggleLanguage()" id="lang-toggle">English</button>
       </div>
     </div>
@@ -218,7 +218,7 @@
     <section class="booking-box">
       <h2 id="cta-title">تنسيق اللقاء الأول أو الاستشارة</h2>
       <p id="cta-sub">نظراً لالتزامات الأبحاث وجداول التدريس، يتم تنسيق الجلسات واللقاءات أسبوعياً بشكل مسبق ومحدد.</p>
-      <a href="https://wa.me/972524793318?text=مرحبا%20أستاذ%20إسماعيل،%20أود%20تنسيق%20لقاء%20أو%20استشارة%20أكاديمية" class="btn-wa" target="_blank" id="wa-btn">
+      <a href="https://wa.me/972524793318?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%20%D8%A3%D8%検討%D8%A7%D8%B0%20%D8%A5%D8%B3%D9%85%D8%A7%D8%B9%D9%8A%D9%84%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%AA%D9%86%D8%B3%D9%8A%D9%82%20%D9%84%D9%82%D8%A7%D8%A1%20%D8%A3%D9%88%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D8%A3%D9%83%D8%A7%D8%AF%D9%8A%D9%85%D9%8A%D8%A9" class="btn-wa" target="_blank" id="wa-btn">
         تواصل عبر واتساب للتنسيق
       </a>
     </section>
@@ -280,6 +280,7 @@
         ctaTitle: "تنسيق اللقاء الأول أو الاستشارة",
         ctaSub: "نظراً لالتزامات الأبحاث وجداول التدريس، يتم تنسيق الجلسات واللقاءات أسبوعياً بشكل مسبق ومحدد.",
         waBtn: "تواصل عبر واتساب للتنسيق",
+        waLink: "https://wa.me/972524793318?text=" + encodeURIComponent("مرحبا أستاذ إسماعيل، أود تنسيق لقاء أو استشارة أكاديمية"),
         footer: "جميع الحقوق محفوظة © 2026 إسماعيل قنبر | باحث دكتوراه ومعلم فيزياء - الجامعة العبرية"
       },
       en: {
@@ -328,6 +329,7 @@
         ctaTitle: "Schedule Your First Meeting or Consultation",
         ctaSub: "Due to academic research and teaching commitments, all sessions are pre-scheduled on a weekly basis.",
         waBtn: "Contact via WhatsApp to Schedule",
+        waLink: "https://wa.me/972524793318?text=" + encodeURIComponent("Hello Ismail, I would like to schedule a session or academic consultation"),
         footer: "All rights reserved © 2026 Ismail Qunbar | Ph.D. Candidate & Physics Teacher - Hebrew University"
       }
     };
@@ -374,6 +376,7 @@
       document.getElementById('cta-title').innerText = data.ctaTitle;
       document.getElementById('cta-sub').innerText = data.ctaSub;
       document.getElementById('wa-btn').innerText = data.waBtn;
+      document.getElementById('wa-btn').href = data.waLink;
       document.getElementById('footer-text').innerText = data.footer;
     }
   </script>
