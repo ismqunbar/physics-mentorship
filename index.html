@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ismail Qunbar | Physics, Math & STEM Mentorship</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0f172a;
+      --accent: #2563eb;
+      --accent-soft: #eff6ff;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --card: #ffffff;
+      --radius: 14px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: #f8fafc; color: var(--text); line-height: 1.6; }
+    body.lang-ar { font-family: 'Tajawal', sans-serif; }
+    body.lang-en { font-family: 'Inter', sans-serif; }
+
+    .container { max-width: 1050px; margin: 0 auto; padding: 0 20px; }
+
+    /* Header & Navigation Bar */
+    header { background: #fff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+    .nav-wrap { display: flex; justify-content: space-between; align-items: center; min-height: 70px; padding: 10px 0; flex-wrap: wrap; gap: 12px; }
+    .brand { font-size: 1.25rem; font-weight: 800; color: var(--primary); }
+    .nav-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    
+    .btn-nav-primary { background: var(--accent); color: #fff; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.88rem; transition: 0.2s; display: inline-flex; align-items: center; gap: 6px; }
+    .btn-nav-primary:hover { opacity: 0.9; }
+
+    .btn-nav-secondary { background: #fff; border: 1.5px solid var(--border); color: var(--primary); padding: 8px 14px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.88rem; transition: 0.2s; }
+    .btn-nav-secondary:hover { background: #f8fafc; border-color: var(--muted); }
+
+    .lang-btn { background: #f1f5f9; border: 1px solid var(--border); padding: 8px 14px; border-radius: 8px; font-weight: 700; cursor: pointer; color: var(--primary); font-size: 0.88rem; transition: all 0.2s; }
+    .lang-btn:hover { background: #e2e8f0; }
+
+    /* Hero Section */
+    .hero { padding: 50px 0 30px; text-align: center; }
+    .badge { display: inline-block; background: var(--accent-soft); color: var(--accent); padding: 6px 16px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; margin-bottom: 14px; }
+    .hero h1 { font-size: 2.2rem; color: var(--primary); margin-bottom: 14px; font-weight: 800; line-height: 1.3; }
+    .hero p { font-size: 1.1rem; color: var(--muted); max-width: 800px; margin: 0 auto 24px; }
+
+    /* Philosophy Quote */
+    .philosophy-card { background: #fff; border-right: 4px solid var(--accent); border-radius: var(--radius); padding: 22px 26px; margin: 20px auto 45px; text-align: start; box-shadow: 0 2px 8px rgba(0,0,0,0.03); max-width: 880px; }
+    body.lang-en .philosophy-card { border-right: none; border-left: 4px solid var(--accent); }
+    .philosophy-card h3 { font-size: 1.15rem; color: var(--primary); margin-bottom: 8px; }
+    .philosophy-card p { font-size: 0.98rem; color: #334155; }
+
+    /* Sections Shared */
+    .section-title { text-align: center; font-size: 1.8rem; font-weight: 800; color: var(--primary); margin-bottom: 10px; }
+    .section-sub { text-align: center; color: var(--muted); margin-bottom: 35px; font-size: 1rem; }
+
+    /* Process Grid for Tutoring */
+    .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-bottom: 50px; }
+    .process-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 26px; }
+    .process-card h3 { font-size: 1.25rem; color: var(--accent); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    .step-list { list-style: none; counter-reset: step-counter; }
+    .step-list li { position: relative; padding-right: 32px; margin-bottom: 16px; font-size: 0.95rem; color: #334155; }
+    body.lang-en .step-list li { padding-right: 0; padding-left: 32px; }
+    .step-list li::before { counter-increment: step-counter; content: counter(step-counter); position: absolute; right: 0; top: 0; width: 22px; height: 22px; background: var(--accent-soft); color: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 800; }
+    body.lang-en .step-list li::before { right: auto; left: 0; }
+
+    /* Academic Consultation Section (STEM) */
+    .stem-consulting-box { background: #fff; border: 1.5px solid var(--border); border-radius: 18px; padding: 36px 30px; margin-bottom: 55px; box-shadow: 0 4px 12px rgba(0,0,0,0.02); }
+    .stem-header { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 24px; }
+    .stem-header h3 { font-size: 1.45rem; color: var(--primary); margin-bottom: 8px; }
+    .stem-header p { color: var(--muted); font-size: 0.98rem; }
+    
+    .stem-steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 24px; }
+    .stem-step-item { background: #f8fafc; border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+    .stem-step-num { font-weight: 800; color: var(--accent); font-size: 1.1rem; margin-bottom: 8px; }
+    .stem-step-item h4 { font-size: 1.05rem; color: var(--primary); margin-bottom: 8px; }
+    .stem-step-item p { font-size: 0.92rem; color: #475569; }
+
+    .stem-note { background: var(--accent-soft); border-radius: 10px; padding: 16px 20px; color: #1e40af; font-size: 0.92rem; line-height: 1.6; }
+
+    /* Terms */
+    .conditions { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; margin-bottom: 50px; font-size: 0.95rem; color: #475569; }
+    .conditions ul { padding-right: 20px; margin-top: 10px; }
+    body.lang-en .conditions ul { padding-right: 0; padding-left: 20px; }
+
+    /* CTA Section */
+    .booking-box { background: var(--primary); color: #fff; padding: 45px 20px; border-radius: 18px; text-align: center; margin-bottom: 60px; }
+    .btn-wa { background: #22c55e; color: #fff; padding: 13px 28px; border-radius: 10px; text-decoration: none; font-weight: 700; display: inline-block; margin-top: 15px; font-size: 1rem; }
+
+    footer { text-align: center; padding: 22px; color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--border); background: #fff; }
+  </style>
+</head>
+<body class="lang-ar">
+
+  <header>
+    <div class="container nav-wrap">
+      <div class="brand" id="brand-text">إسماعيل قنبر</div>
+      <div class="nav-actions">
+        <!-- رابط Google Form لاستقبال حلول الطلاب والتقييم التشخيصي -->
+        <a href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" class="btn-nav-primary" id="btn-submit-solution">
+          <span>📝</span> <span id="btn-solution-text">تقديم الحل التشخيصي</span>
+        </a>
+        <!-- رابط السيرة الذاتية CV على Google Drive -->
+        <a href="YOUR_CV_LINK_HERE" target="_blank" class="btn-nav-secondary" id="cv-btn">السيرة الذاتية (CV)</a>
+        <button class="lang-btn" onclick="toggleLanguage()" id="lang-toggle">English</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <span class="badge" id="badge-text">الفيزياء منهجية تفكير، وليست حفظ قوانين</span>
+      <h1 id="hero-title">تعليم مخصص في الفيزياء والرياضيات واستشارات أكاديمية</h1>
+      <p id="hero-desc">طالب دكتوراه في الحوسبة الكمية ومعلم فيزياء 1 و 2 لطلاب السنة التحضيرية في مدرسة روثبرغ للطلاب الدوليين - الجامعة العبرية. إرشاد علمي منهجي يغير طريقة تفكير الطالب ويبني أسساً متينة للتميز الجامعي والثانوي.</p>
+    </section>
+
+    <!-- Philosophy -->
+    <div class="philosophy-card">
+      <h3 id="philo-title">💡 فلسفتنا في التعليم:</h3>
+      <p id="philo-desc">
+        التعليم التقليدي يختزل الفيزياء في "احفظ القانون وعوّض الأرقام لتحصيل العلامة"، وهو ما يجعل الطلاب ينفرون منها. عندما يتعلم الطالب فقط من أجل الامتحان، يفقد متعة الاكتشاف. الفيزياء في جوهرها هي منهجية فكرية وعقلية تحليلية شاملة. أقدم لطلابي خلاصة سنوات من الجهد الأكاديمي والبحثي المتقدم لنقل هذه العقلية، بحيث تتغير طريقة تفكير الطالب بالكامل في مقاربة المسائل والمفاهيم.
+      </p>
+    </div>
+
+    <!-- Tutoring Workflow -->
+    <section>
+      <h2 class="section-title" id="process-title">آلية العمل والدروس المخصصة</h2>
+      <p class="section-sub" id="process-sub">لا يوجد قالب واحد للجميع؛ التقييم الأولي هو حجر الأساس لبناء خطة تناسب كل طالب بدقة</p>
+
+      <div class="process-grid">
+        <!-- University Workflow -->
+        <div class="process-card">
+          <h3 id="uni-title">🎓 مسار طلاب الجامعة</h3>
+          <ul class="step-list" id="uni-steps">
+            <li><strong>سؤال تشخيصي أولي مفتوح:</strong> يحل الطالب مسألة تشخيصية مفتوحة مسبقاً ويرسلها عبر نموذج Google Form أعلاه.</li>
+            <li><strong>فحص دقيق ومسبق:</strong> أقوم بتحليل طريقة تفكير الطالب والخطوات الفيزيائية والرياضية لتحديد الثغرات قبل بدء اللقاء.</li>
+            <li><strong>معالجة مركزة لنقاط الضعف:</strong> نبدأ الدرس فوراً بالتركيز على المشاكل الجوهرية دون إهدار وقت الحصة في استكشافها.</li>
+            <li><strong>المكان:</strong> الدروس تعقد في حرم جفعات رام (الجامعة العبرية) أو عن بُعد بجودة عالية.</li>
+          </ul>
+        </div>
+
+        <!-- High School Workflow -->
+        <div class="process-card">
+          <h3 id="school-title">🏫 مسار طلاب الثانوية (بجروت / دولي)</h3>
+          <ul class="step-list" id="school-steps">
+            <li><strong>لقاء تمهيدي مع الأهل (30 دقيقة):</strong> جلسة حوارية لملائمة التوقعات، الاستماع للأهل، وفهم تطلعاتهم ومسار الطالب.</li>
+            <li><strong>تقييم تشخيصي للطالب:</strong> مسألة مفتوحة تحدد بدقة إن كانت المشكلة تكمن في فهم المقروء، التأسيس الرياضي، أو الفهم الفيزيائي.</li>
+            <li><strong>إعداد خطة عمل مخصصة:</strong> تصميم مسار علاجي ومحدد يعالج نقاط الضعف بدقة واحترافية.</li>
+            <li><strong>لقاء ثانٍ مع الأهل:</strong> عرض الخطة، تشخيص نقاط القوة والضعف، وآلية التنفيذ، والبدء فور الاتفاق التام.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEM Academic Consulting Section -->
+    <section class="stem-consulting-box">
+      <div class="stem-header">
+        <h3 id="stem-title">🧭 الاستشارات والتوجيه الأكاديمي لمجالات العلوم والهندسة (STEM)</h3>
+        <p id="stem-sub">
+          خدمة مخصصة لطلاب المرحلة الثانوية المقبلين على الحياة الجامعية والراغبين بدراسة تخصصات العلوم، التكنولوجيا، الهندسة، والرياضيات (STEM).
+        </p>
+      </div>
+
+      <div class="stem-steps-grid">
+        <div class="stem-step-item">
+          <div class="stem-step-num">01</div>
+          <h4 id="stem-step1-t">ملائمة توقعات صريحة مع الأهل</h4>
+          <p id="stem-step1-d">
+            نبدأ بجلسة مع الأهل لتوضيح الرؤية: لست شخصاً سحرياً يقرر للابن ما يحب أو ما يجب أن يدرسه، بل دوري يكمن في الاستماع التحليلي الدقيق لشغف الطالب وميوله الحقيقية من واقع تجربتي الأكاديمية والعملية الطويلة.
+          </p>
+        </div>
+
+        <div class="stem-step-item">
+          <div class="stem-step-num">02</div>
+          <h4 id="stem-step2-t">جلسة استماع وتفاعل وجاهية مع الطالب</h4>
+          <p id="stem-step2-d">
+            جلسة حوارية منفصلة مع الطالب (يُفضل وجاهياً في مكتبي في حرم جفعات رام - الجامعة العبرية بموافقة الأهل)، نناقش فيها أفكاره، اهتماماته، وتطلعاته بأريحية تامة للتعرف على طريقة تفكيره وميوله الفعلية.
+          </p>
+        </div>
+
+        <div class="stem-step-item">
+          <div class="stem-step-num">03</div>
+          <h4 id="stem-step3-t">ملف بحثي وتوجيهي مخصص</h4>
+          <p id="stem-step3-d">
+            أقوم ببحث أكاديمي شامل وإعداد ملف مكتوب يلخص اللقاء بالكامل، ويبرز المجالات التي يميل إليها الطالب مع شرح وافٍ وواضح للموضوعات لكي يتدارسها الطالب والأهل معاً بوعي كامل.
+          </p>
+        </div>
+
+        <div class="stem-step-item">
+          <div class="stem-step-num">04</div>
+          <h4 id="stem-step4-t">جلسة تفكيك التخصص ومسارات المستقبل</h4>
+          <p id="stem-step4-d">
+            عند اختيار المسار أو للمفاضلة بين الخيارات، نعقد لقاءً ثانياً (مشتركاً أو منفرداً حسب رغبة الأهل) نشرح فيه تفاصيل التخصص، شروط القبول، المواد الدراسية خلال اللقب، والفرص الوظيفية في سوق العمل.
+          </p>
+        </div>
+      </div>
+
+      <div class="stem-note" id="stem-note-text">
+        📌 <strong>ملاحظة هامة:</strong> للطلاب ممن هم فوق سن 18 عاماً، تكون مشاركة الأهل اختيارية بالكامل ولا يُشترط حضورهم في أي مرحلة من المراحل ما لم يرغب الطالب في ذلك.
+      </div>
+    </section>
+
+    <!-- Terms -->
+    <div class="conditions">
+      <strong id="terms-title">شروط وأماكن اللقاءات:</strong>
+      <ul id="terms-list">
+        <li>تُعقد الدروس الجامعية والاستشارات حضورياً في حرم جفعات رام (الجامعة العبرية).</li>
+        <li>الدروس المنزلية لطلاب المدارس متاحة ضمن مناطق محددة فقط ووفق شروط وتكلفة تنقل إضافية محددة مسبقاً.</li>
+        <li>لغات التعليم والتوجيه متاحة بالكامل: العربية، العبرية، والإنجليزية وفق لغة امتحان ومساق الطالب.</li>
+      </ul>
+    </div>
+
+    <!-- Booking CTA -->
+    <section class="booking-box">
+      <h2 id="cta-title">تنسيق اللقاء الأول أو الاستشارة</h2>
+      <p id="cta-sub">نظراً لالتزامات الأبحاث وجداول التدريس، يتم تنسيق الجلسات واللقاءات أسبوعياً بشكل مسبق ومحدد.</p>
+      <a href="https://wa.me/972500000000?text=مرحبا%20أستاذ%20إسماعيل،%20أود%20تنسيق%20لقاء%20أو%20استشارة%20أكاديمية" class="btn-wa" target="_blank" id="wa-btn">
+        تواصل عبر واتساب للتنسيق
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" id="footer-text">
+      جميع الحقوق محفوظة © 2026 إسماعيل قنبر | باحث دكتوراه ومعلم فيزياء - الجامعة العبرية
+    </div>
+  </footer>
+
+  <script>
+    let currentLang = 'ar';
+
+    const content = {
+      ar: {
+        brand: "إسماعيل قنبر",
+        btnSolution: "تقديم الحل التشخيصي",
+        cv: "السيرة الذاتية (CV)",
+        langBtn: "English",
+        badge: "الفيزياء منهجية تفكير، وليست حفظ قوانين",
+        heroTitle: "تعليم مخصص في الفيزياء والرياضيات واستشارات أكاديمية",
+        heroDesc: "طالب دكتوراه في الحوسبة الكمية ومعلم فيزياء 1 و 2 لطلاب السنة التحضيرية في مدرسة روثبرغ للطلاب الدوليين - الجامعة العبرية. إرشاد علمي منهجي يغير طريقة تفكير الطالب ويبني أسساً متينة للتميز الجامعي والثانوي.",
+        philoTitle: "💡 فلسفتنا في التعليم:",
+        philoDesc: "التعليم التقليدي يختزل الفيزياء في 'احفظ القانون وعوّض الأرقام لتحصيل العلامة'، وهو ما يجعل الطلاب ينفرون منها. عندما يتعلم الطالب فقط من أجل الامتحان، يفقد متعة الاكتشاف. الفيزياء في جوهرها هي منهجية فكرية وعقلية تحليلية شاملة. أقدم لطلابي خلاصة سنوات من الجهد الأكاديمي والبحثي المتقدم لنقل هذه العقلية، بحيث تتغير طريقة تفكير الطالب بالكامل في مقاربة المسائل والمفاهيم.",
+        processTitle: "آلية العمل والدروس المخصصة",
+        processSub: "لا يوجد قالب واحد للجميع؛ التقييم الأولي هو حجر الأساس لبناء خطة تناسب كل طالب بدقة",
+        uniTitle: "🎓 مسار طلاب الجامعة",
+        uniSteps: `
+          <li><strong>سؤال تشخيصي أولي مفتوح:</strong> يحل الطالب مسألة تشخيصية مفتوحة مسبقاً ويرسلها عبر نموذج Google Form أعلاه.</li>
+          <li><strong>فحص دقيق ومسبق:</strong> أقوم بتحليل طريقة تفكير الطالب والخطوات الفيزيائية والرياضية لتحديد الثغرات قبل بدء اللقاء.</li>
+          <li><strong>معالجة مركزة لنقاط الضعف:</strong> نبدأ الدرس فوراً بالتركيز على المشاكل الجوهرية دون إهدار وقت الحصة في استكشافها.</li>
+          <li><strong>المكان:</strong> الدروس تعقد في حرم جفعات رام (الجامعة العبرية) أو عن بُعد بجودة عالية.</li>
+        `,
+        schoolTitle: "🏫 مسار طلاب الثانوية (بجروت / دولي)",
+        schoolSteps: `
+          <li><strong>لقاء تمهيدي مع الأهل (30 دقيقة):</strong> جلسة حوارية لملائمة التوقعات، الاستماع للأهل، وفهم تطلعاتهم ومسار الطالب.</li>
+          <li><strong>تقييم تشخيصي للطالب:</strong> مسألة مفتوحة تحدد بدقة إن كانت المشكلة تكمن في فهم المقروء، التأسيس الرياضي، أو الفهم الفيزيائي.</li>
+          <li><strong>إعداد خطة عمل مخصصة:</strong> تصميم مسار علاجي ومحدد يعالج نقاط الضعف بدقة واحترافية.</li>
+          <li><strong>لقاء ثانٍ مع الأهل:</strong> عرض الخطة، تشخيص نقاط القوة والضعف، وآلية التنفيذ، والبدء فور الاتفاق التام.</li>
+        `,
+        stemTitle: "🧭 الاستشارات والتوجيه الأكاديمي لمجالات العلوم والهندسة (STEM)",
+        stemSub: "خدمة مخصصة لطلاب المرحلة الثانوية المقبلين على الحياة الجامعية والراغبين بدراسة تخصصات العلوم، التكنولوجيا، الهندسة، والرياضيات (STEM).",
+        stemStep1T: "ملائمة توقعات صريحة مع الأهل",
+        stemStep1D: "نبدأ بجلسة مع الأهل لتوضيح الرؤية: لست شخصاً سحرياً يقرر للابن ما يحب أو ما يجب أن يدرسه، بل دوري يكمن في الاستماع التحليلي الدقيق لشغف الطالب وميوله الحقيقية من واقع تجربتي الأكاديمية والعملية الطويلة.",
+        stemStep2T: "جلسة استماع وتفاعل وجاهية مع الطالب",
+        stemStep2D: "جلسة حوارية منفصلة مع الطالب (يُفضل وجاهياً في مكتبي في حرم جفعات رام - الجامعة العبرية بموافقة الأهل)، نناقش فيها أفكاره، اهتماماته، وتطلعاته بأريحية تامة للتعرف على طريقة تفكيره وميوله الفعلية.",
+        stemStep3T: "ملف بحثي وتوجيهي مخصص",
+        stemStep3D: "أقوم ببحث أكاديمي شامل وإعداد ملف مكتوب يلخص اللقاء بالكامل، ويبرز المجالات التي يميل إليها الطالب مع شرح وافٍ وواضح للموضوعات لكي يتدارسها الطالب والأهل معاً بوعي كامل.",
+        stemStep4T: "جلسة تفكيك التخصص ومسارات المستقبل",
+        stemStep4D: "عند اختيار المسار أو للمفاضلة بين الخيارات، نعقد لقاءً ثانياً (مشتركاً أو منفرداً حسب رغبة الأهل) نشرح فيه تفاصيل التخصص، شروط القبول، المواد الدراسية خلال اللقب، والفرص الوظيفية في سوق العمل.",
+        stemNoteText: "📌 <strong>ملاحظة هامة:</strong> للطلاب ممن هم فوق سن 18 عاماً، تكون مشاركة الأهل اختيارية بالكامل ولا يُشترط حضورهم في أي مرحلة من المراحل ما لم يرغب الطالب في ذلك.",
+        termsTitle: "شروط وأماكن اللقاءات:",
+        termsList: `
+          <li>تُعقد الدروس الجامعية والاستشارات حضورياً في حرم جفعات رام (الجامعة العبرية).</li>
+          <li>الدروس المنزلية لطلاب المدارس متاحة ضمن مناطق محددة فقط ووفق شروط وتكلفة تنقل إضافية محددة مسبقاً.</li>
+          <li>لغات التعليم والتوجيه متاحة بالكامل: العربية، العبرية، والإنجليزية وفق لغة امتحان ومساق الطالب.</li>
+        `,
+        ctaTitle: "تنسيق اللقاء الأول أو الاستشارة",
+        ctaSub: "نظراً لالتزامات الأبحاث وجداول التدريس، يتم تنسيق الجلسات واللقاءات أسبوعياً بشكل مسبق ومحدد.",
+        waBtn: "تواصل عبر واتساب للتنسيق",
+        footer: "جميع الحقوق محفوظة © 2026 إسماعيل قنبر | باحث دكتوراه ومعلم فيزياء - الجامعة العبرية"
+      },
+      en: {
+        brand: "Ismail Qunbar",
+        btnSolution: "Submit Diagnostic Solution",
+        cv: "Curriculum Vitae (CV)",
+        langBtn: "العربية",
+        badge: "Physics is a mindset, not just memorizing formulas",
+        heroTitle: "Tailored Physics, Math Mentorship & STEM Academic Guidance",
+        heroDesc: "Ph.D. candidate in Quantum Computing and Physics 1 & 2 Teacher for preparatory year students at the Rothberg International School, Hebrew University of Jerusalem. Methodological scientific coaching designed to reshape problem-solving mindsets.",
+        philoTitle: "💡 Educational Philosophy:",
+        philoDesc: "Conventional education often reduces physics to 'memorize the formula and plug in numbers for grades,' driving students away from its essence. When students study merely for exams, the joy of discovery is lost. Physics is a rigorous thought system and an analytical mindset. I distill years of rigorous academic and research experience to impart this mindset—fundamentally transforming how students deconstruct complex problems.",
+        processTitle: "Structured Methodology & Tailored Sessions",
+        processSub: "No one-size-fits-all approach. Pre-assessment is vital to craft an individualized roadmap for each student.",
+        uniTitle: "🎓 University Students Track",
+        uniSteps: `
+          <li><strong>Open Diagnostic Question:</strong> The student solves an open diagnostic problem in advance and submits it via the Google Form above.</li>
+          <li><strong>Prior Evaluation:</strong> I analyze reasoning, mathematical steps, and conceptual gaps prior to the meeting.</li>
+          <li><strong>Targeted Session Focus:</strong> We dive straight into addressing specific bottlenecks without wasting session time diagnosing them.</li>
+          <li><strong>Location:</strong> Sessions take place at the Edmond J. Safra (Givat Ram) campus or online.</li>
+        `,
+        schoolTitle: "🏫 High School Track (Bagrut / International)",
+        schoolSteps: `
+          <li><strong>Introductory Parents Meeting (30 mins):</strong> An initial dialogue to align expectations and understand the student's background.</li>
+          <li><strong>Student Diagnostic Problem:</strong> Pinpointing whether obstacles stem from reading comprehension, mathematical foundations, or physical intuition.</li>
+          <li><strong>Custom Roadmap Formulation:</strong> Structuring a targeted plan addressing the student's exact weaknesses.</li>
+          <li><strong>Follow-up Alignment Meeting:</strong> Presenting the diagnosis and study roadmap to parents before commencing execution.</li>
+        `,
+        stemTitle: "🧭 Academic Guidance & Mentorship for STEM Fields",
+        stemSub: "A specialized service for high school students preparing for university who are aspiring to pursue Science, Technology, Engineering, and Mathematics (STEM) degrees.",
+        stemStep1T: "Expectation Alignment with Parents",
+        stemStep1D: "We begin with a candid conversation with parents: I am not a magician who magically dictates what your son/daughter wants, but rather an active, analytical listener who detects authentic interests and inclinations based on extensive academic and practical experience.",
+        stemStep2T: "In-Person Interactive Session with the Student",
+        stemStep2D: "A dedicated conversation with the student (preferably in person at my Hebrew University office at Givat Ram, with parental consent), discussing ideas, interests, and aspirations to truly understand their thought process.",
+        stemStep3T: "Tailored Research & Advisory Portfolio",
+        stemStep3D: "I conduct thorough academic research and prepare a comprehensive document summarizing the session, highlighting potential fields aligned with the student's aptitudes, providing detailed context for both parents and student to review.",
+        stemStep4T: "Degree Breakdown & Future Career Paths",
+        stemStep4D: "Once fields are shortlisted, we hold a follow-up session (jointly or separately based on parental preference) detailing admission requirements, study curriculum during the degree, and real-world employment prospects.",
+        stemNoteText: "📌 <strong>Important Note:</strong> For students aged 18 and above, parental involvement is completely optional and not required at any stage unless preferred by the student.",
+        termsTitle: "Terms & Locations:",
+        termsList: `
+          <li>University sessions and consultations are held on-site at the Givat Ram campus (The Hebrew University).</li>
+          <li>Home visits for high school students are restricted to specific zones with predefined travel arrangements.</li>
+          <li>Instruction is fully multilingual: Arabic, Hebrew, and English according to curriculum requirements.</li>
+        `,
+        ctaTitle: "Schedule Your First Meeting or Consultation",
+        ctaSub: "Due to academic research and teaching commitments, all sessions are pre-scheduled on a weekly basis.",
+        waBtn: "Contact via WhatsApp to Schedule",
+        footer: "All rights reserved © 2026 Ismail Qunbar | Ph.D. Candidate & Physics Teacher - Hebrew University"
+      }
+    };
+
+    function toggleLanguage() {
+      currentLang = (currentLang === 'ar') ? 'en' : 'ar';
+      const isAr = currentLang === 'ar';
+      
+      document.documentElement.lang = currentLang;
+      document.documentElement.dir = isAr ? 'rtl' : 'ltr';
+      document.body.className = isAr ? 'lang-ar' : 'lang-en';
+
+      const data = content[currentLang];
+      document.getElementById('brand-text').innerText = data.brand;
+      document.getElementById('btn-solution-text').innerText = data.btnSolution;
+      document.getElementById('cv-btn').innerText = data.cv;
+      document.getElementById('lang-toggle').innerText = data.langBtn;
+      document.getElementById('badge-text').innerText = data.badge;
+      document.getElementById('hero-title').innerText = data.heroTitle;
+      document.getElementById('hero-desc').innerText = data.heroDesc;
+      document.getElementById('philo-title').innerText = data.philoTitle;
+      document.getElementById('philo-desc').innerText = data.philoDesc;
+      document.getElementById('process-title').innerText = data.processTitle;
+      document.getElementById('process-sub').innerText = data.processSub;
+      document.getElementById('uni-title').innerText = data.uniTitle;
+      document.getElementById('uni-steps').innerHTML = data.uniSteps;
+      document.getElementById('school-title').innerText = data.schoolTitle;
+      document.getElementById('school-steps').innerHTML = data.schoolSteps;
+
+      document.getElementById('stem-title').innerText = data.stemTitle;
+      document.getElementById('stem-sub').innerText = data.stemSub;
+      document.getElementById('stem-step1-t').innerText = data.stemStep1T;
+      document.getElementById('stem-step1-d').innerText = data.stemStep1D;
+      document.getElementById('stem-step2-t').innerText = data.stemStep2T;
+      document.getElementById('stem-step2-d').innerText = data.stemStep2D;
+      document.getElementById('stem-step3-t').innerText = data.stemStep3T;
+      document.getElementById('stem-step3-d').innerText = data.stemStep3D;
+      document.getElementById('stem-step4-t').innerText = data.stemStep4T;
+      document.getElementById('stem-step4-d').innerText = data.stemStep4D;
+      document.getElementById('stem-note-text').innerHTML = data.stemNoteText;
+
+      document.getElementById('terms-title').innerText = data.termsTitle;
+      document.getElementById('terms-list').innerHTML = data.termsList;
+      document.getElementById('cta-title').innerText = data.ctaTitle;
+      document.getElementById('cta-sub').innerText = data.ctaSub;
+      document.getElementById('wa-btn').innerText = data.waBtn;
+      document.getElementById('footer-text').innerText = data.footer;
+    }
+  </script>
+</body>
+</html>
